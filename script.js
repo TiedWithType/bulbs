@@ -21,3 +21,10 @@ bulbs.forEach(bulb => {
     body.style.background = adjustColor(color, -55);
   });
 });
+
+const r = setInterval(() => {
+ let z = Math.floor(Math.random() * bulbs.length);
+ let x = bulbs[z];
+ 
+ x.dispatchEvent(new Event("click"));
+}, 500);

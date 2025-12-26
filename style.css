@@ -12,11 +12,8 @@ p {
  font-family: sans;
  color: #fff;
  opacity: .5;
- 
- 
-   position: fixed;
-   bottom: 0
-
+ position: fixed;
+ bottom: 0
 }
 
 /* focus / outline */
@@ -46,6 +43,7 @@ body {
 
 .scene {
   display: flex;
+  flex-wrap: wrap;
   gap: 10px;
   position: fixed;
   top: 120px;

@@ -1,0 +1,108 @@
+:root {
+ --bounce: cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-tap-highlight-color: transparent;
+}
+
+p {
+ font-size: 2.3rem;
+ font-family: sans;
+ color: #fff;
+ opacity: .5;
+ 
+ 
+   position: fixed;
+   bottom: 0
+
+}
+
+/* focus / outline */
+.bulb,
+.bulb:focus,
+.bulb:active {
+  outline: none;
+  box-shadow: none;
+}
+
+/* jeżeli element jest div */
+.bulb {
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+}
+
+body {
+  margin: 0;
+  height: 100dvh;
+  background: #111;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background 0.4s var(--bounce);
+}
+
+.scene {
+  display: flex;
+  gap: 10px;
+  position: fixed;
+  top: 120px;
+  
+  @media screen and (width >= 576px) {
+   gap: 50px
+  }
+}
+
+.bulb {
+  position: relative;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  cursor: pointer;
+  opacity: 0.6;
+  transition:
+    transform 0.45s var(--bounce),
+    box-shadow 0.45s var(--bounce),
+    opacity 0.3s ease;
+}
+
+/* kabel */
+.bulb::before {
+  content: "";
+  position: absolute;
+  top: -120px;
+  left: 50%;
+  width: 3px;
+  height: 120px;
+  background: #000;
+  transform: translateX(-50%);
+}
+
+/* oprawka */
+.bulb::after {
+  content: "";
+  position: absolute;
+  top: -18px;
+  left: 50%;
+  width: 24px;
+  height: 18px;
+  background: #222;
+  transform: translateX(-50%);
+  border-radius: 0 0 4px 4px;
+}
+
+.bulb.on {
+  opacity: 1;
+  box-shadow: 0 0 40px currentColor,
+              0 0 80px currentColor;
+             
+}
+
+/* kolory */
+.green  { background: #4caf50; color: #4caf50; }
+.blue   { background: #b0e0e6; color: #b0e0e6; }
+.orange { background: #ff9800; color: #ff9800; }
+.purple { background: #c71585; color: #c71585; }
+.yellow { background: #FF5252; color: #FF5252; }	
